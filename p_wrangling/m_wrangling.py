@@ -32,8 +32,8 @@ def getjobtitle(allone):
     rename_api_df = api_df.rename(columns={'uuid': 'normalized_job_code',
                                                'title': 'Job_Title'})
     sort_df = rename_api_df.set_index('normalized_job_code')
-    allone = allone.set_index('normalized_job_code')
-    alltwo = sort_df.join(allone, how='outer')
+    alltwo = sort_df.join(allone.set_index('normalized_job_code'), on='normalized_job_code').reset_index()
+    alltwo['Job_Title'].fillna('unemployed', inplace=True)
     print('receiving jobs standardized...')
     return alltwo
 
@@ -43,7 +43,7 @@ def calculateAge(birthDate):
     return each_age
 
 def realAge(alltwo):
-    print('starting wit age standardize...')
+    print('starting with age standardize...')
     alltwo['age'] = alltwo['age'].str.replace('\D', '')
     age = []
     for birth in alltwo['age']:
@@ -54,9 +54,6 @@ def realAge(alltwo):
     alltwo['age'] = np.array(age)
     print('receiving age standardized...')
     return alltwo
-
-def test(alltwo):
-    data = alltwo[[]]
 
 def wrangling(all):
     standardizedC = standardizeCountry(all)
