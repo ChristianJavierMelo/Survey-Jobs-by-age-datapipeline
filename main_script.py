@@ -25,9 +25,9 @@ def main(args):
     print('starting the analysis procedure...')
     all = acq.getall(args.path)
     moreall = wrang.wrangling(all)
-    #report = anal.grouptable(moreall, args.country)
-    #print(rep.plot_returns(report))
-    print(anal.grouptable(moreall, args.country))
+    report = anal.grouptable(moreall, args.country)
+    finish = rep.reporting(report, args.country)
+    print(finish)
     print('pipeline finished')
 
 

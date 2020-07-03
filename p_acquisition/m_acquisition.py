@@ -16,6 +16,6 @@ def getall(path):
         else:
             raw_data = pd.merge(raw_data, data, how='left', on='uuid')
     print('...compiling results on csv format...')
-    raw_data.to_csv('data/raw/raw_data_compile.csv', index=False)
+    raw_data.to_csv('data/processed/raw_data_compile.csv', index=False)
     print('...copy saved!.')
     return raw_data
