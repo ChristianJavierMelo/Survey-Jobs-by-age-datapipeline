@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def TopAmountSurveys(report):
-     print('drawing basic chart...')
+     print('drawing basic chart of surveys...')
      grouped4 = report.groupby(['Country'])['Quantity'].count()
      df_grouped4 = pd.DataFrame(grouped4).reset_index()
      df_grouped4_sorted = df_grouped4.sort_values(by='Quantity', ascending=False)
@@ -16,10 +16,11 @@ def TopAmountSurveys(report):
      file_name = 'data/results/' + title + '.png'
      fig = chart_amountsurveys.get_figure()
      fig.savefig(file_name)
-     print('...chart saved!')
+     print('...basic chart saved!')
      return chart_amountsurveys
 
 def TopUnemployedCountry(report):
+     print('drawing other basic chart...')
      grouped3 = report.groupby(['Country', 'Job_Title'])['Quantity'].count()
      df_grouped3 = pd.DataFrame(grouped3).reset_index()
      df_grouped3_sorted = df_grouped3.sort_values(by='Quantity', ascending=False)
@@ -32,9 +33,11 @@ def TopUnemployedCountry(report):
      file_name = 'data/results/' + title + '.png'
      fig = chart_unem_country.get_figure()
      fig.savefig(file_name)
+     print('...last basic chart saved!')
      return chart_unem_country
 
 def Top5JobTitles(report, country):
+     print('drawing basic chart...')
      grouped = report.groupby(['Job_Title'])['Quantity'].count()
      df_grouped = pd.DataFrame(grouped).reset_index()
      df_grouped_desc_onlyJobs = df_grouped[df_grouped.Job_Title != 'unemployed']
@@ -47,6 +50,7 @@ def Top5JobTitles(report, country):
      file_name = 'data/results/' + title + '.png'
      fig = chart_job.get_figure()
      fig.savefig(file_name)
+     print('...chart saved!')
      return chart_job
 
 def reporting(report, country):
