@@ -7,7 +7,7 @@ The main objective of this project is to present a report based on a series of s
 ## Installation
 ### Clone this repository
 ```
-git clone https://github.com/ChristianJavierMelo/ih_datamadpt0420_project_m1.git
+git clone https://github.com/ChristianJavierMelo/Survey-Jobs-by-age-datapipeline.git
 
 ```
 Execute the file **main_script.py** according to the rules explained on operating section of this document.
@@ -19,7 +19,7 @@ It is possible to adapt the project to your own necessity. It is only necessary 
 ## Operating
 To use the project, please execute the file named **main_script.py** and insert the path where the file with format **file.db** is located into your local environment. You will receive a global information of every countries analysed. If you want to focus only in a specific country, please introduce the argument after the above specified path according to the rules established.
 ## Troubleshooting
-Browse issues: https://github.com/ChristianJavierMelo/ih_datamadpt0420_project_m1/issues
+Browse issues: https://github.com/ChristianJavierMelo/Survey-Jobs-by-age-datapipeline/issues
 
 If you have any suggest or doubt, you can contact with me via email: "christian.javier.melo@gmail.com"
 ## Changelog
